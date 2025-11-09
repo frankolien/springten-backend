@@ -1,7 +1,7 @@
 const hre = require("hardhat");
 
 async function main() {
-  console.log("🚀 Starting SpringTen contracts deployment...\n");
+  console.log(" Starting SpringTen contracts deployment...\n");
 
   // Get the contract factories
   const SpringTenToken = await hre.ethers.getContractFactory("SpringTenToken");
@@ -14,14 +14,14 @@ async function main() {
   console.log("Account balance:", (await hre.ethers.provider.getBalance(deployer.address)).toString());
 
   // Deploy SpringTen Token
-  console.log("\n📝 Deploying SpringTen Token...");
+  console.log("\n Deploying SpringTen Token...");
   const springTenToken = await SpringTenToken.deploy();
   await springTenToken.waitForDeployment();
   const tokenAddress = await springTenToken.getAddress();
-  console.log("✅ SpringTen Token deployed to:", tokenAddress);
+  console.log("SpringTen Token deployed to:", tokenAddress);
 
   // Deploy SpringTen NFT
-  console.log("\n🎨 Deploying SpringTen NFT...");
+  console.log("\n Deploying SpringTen NFT...");
   const springTenNFT = await SpringTenNFT.deploy(
     "SpringTen Collection", // Collection name
     "SPRINGNFT",           // Collection symbol
@@ -30,17 +30,17 @@ async function main() {
   );
   await springTenNFT.waitForDeployment();
   const nftAddress = await springTenNFT.getAddress();
-  console.log("✅ SpringTen NFT deployed to:", nftAddress);
+  console.log("SpringTen NFT deployed to:", nftAddress);
 
   // Deploy SpringTen Marketplace
   console.log("\n🏪 Deploying SpringTen Marketplace...");
   const springTenMarketplace = await SpringTenMarketplace.deploy();
   await springTenMarketplace.waitForDeployment();
   const marketplaceAddress = await springTenMarketplace.getAddress();
-  console.log("✅ SpringTen Marketplace deployed to:", marketplaceAddress);
+  console.log("SpringTen Marketplace deployed to:", marketplaceAddress);
 
   // Deployment summary
-  console.log("\n🎉 Deployment Summary:");
+  console.log("\n Deployment Summary:");
   console.log("=====================================");
   console.log("SpringTen Token:", tokenAddress);
   console.log("SpringTen NFT:", nftAddress);
@@ -71,7 +71,7 @@ async function main() {
   }
   
   fs.writeFileSync(deploymentPath, JSON.stringify(deploymentInfo, null, 2));
-  console.log(`\n📄 Deployment info saved to: ${deploymentPath}`);
+  console.log(`\n Deployment info saved to: ${deploymentPath}`);
 
   // Verify contracts on Etherscan (if not localhost)
   if (hre.network.name !== "localhost" && hre.network.name !== "hardhat") {
@@ -82,9 +82,9 @@ async function main() {
         address: tokenAddress,
         constructorArguments: [],
       });
-      console.log("✅ SpringTen Token verified");
+      console.log(" SpringTen Token verified");
     } catch (error) {
-      console.log("❌ SpringTen Token verification failed:", error.message);
+      console.log(" SpringTen Token verification failed:", error.message);
     }
 
     try {
@@ -97,9 +97,9 @@ async function main() {
           hre.ethers.parseEther("0.01")
         ],
       });
-      console.log("✅ SpringTen NFT verified");
+      console.log(" SpringTen NFT verified");
     } catch (error) {
-      console.log("❌ SpringTen NFT verification failed:", error.message);
+      console.log(" SpringTen NFT verification failed:", error.message);
     }
 
     try {
@@ -107,13 +107,13 @@ async function main() {
         address: marketplaceAddress,
         constructorArguments: [],
       });
-      console.log("✅ SpringTen Marketplace verified");
+      console.log(" SpringTen Marketplace verified");
     } catch (error) {
-      console.log("❌ SpringTen Marketplace verification failed:", error.message);
+      console.log(" SpringTen Marketplace verification failed:", error.message);
     }
   }
 
-  console.log("\n🎊 Deployment completed successfully!");
+  console.log("\n Deployment completed successfully!");
 }
 
 main()
