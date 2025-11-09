@@ -64,7 +64,7 @@ npm run node
 npm run deploy
 ```
 
-### Deploy to Testnet (Sepolia)
+### ..Deploying to Testnet (Sepolia)
 ```bash
 # Set environment variables
 export SEPOLIA_URL="your_sepolia_rpc_url"
@@ -75,7 +75,7 @@ export ETHERSCAN_API_KEY="your_etherscan_api_key"
 npm run deploy:testnet
 ```
 
-## Contract Addresses
+## contract addresses
 
 After deployment, contract addresses will be saved to `deployments/{network}.json`.
 
@@ -117,7 +117,7 @@ After deployment, contract addresses will be saved to `deployments/{network}.jso
 - `fetchUserListings(address user)` - Get user's listings
 - `fetchUserPurchases(address user)` - Get user's purchases
 
-## 🧪 Testing
+## ..for testing
 
 The test suite covers:
 - Token functionality (minting, staking, rewards)
@@ -129,7 +129,7 @@ Run tests with:
 npm test
 ```
 
-## 🔒 Security Features
+## the security features
 
 - **ReentrancyGuard**: Prevents reentrancy attacks
 - **Ownable**: Access control for admin functions
