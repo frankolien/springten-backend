@@ -1,8 +1,7 @@
 # SpringTen Smart Contracts
 
-This directory contains the Solidity smart contracts for the SpringTen NFT marketplace platform.
 
-## 📋 Contracts Overview
+## My overviw of the contract 
 
 ### 1. SpringTenToken.sol
 - **Purpose**: ERC-20 token for the SpringTen platform
@@ -33,7 +32,7 @@ This directory contains the Solidity smart contracts for the SpringTen NFT marke
   - Fee collection
   - Reentrancy protection
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Node.js (v16 or higher)
@@ -76,7 +75,7 @@ export ETHERSCAN_API_KEY="your_etherscan_api_key"
 npm run deploy:testnet
 ```
 
-## 📊 Contract Addresses
+## Contract Addresses
 
 After deployment, contract addresses will be saved to `deployments/{network}.json`.
 
@@ -93,7 +92,7 @@ After deployment, contract addresses will be saved to `deployments/{network}.jso
 }
 ```
 
-## 🔧 Contract Functions
+## Contract Functions
 
 ### SpringTenToken
 - `mint(address to, uint256 amount)` - Mint new tokens (owner only)
@@ -138,32 +137,17 @@ npm test
 - **Input Validation**: Comprehensive input checking
 - **Safe Math**: Overflow/underflow protection
 
-## 📈 Gas Optimization
+## Gas Optimization
 
 - **Optimized Solidity**: Version 0.8.19 with optimizer enabled
 - **Efficient Storage**: Packed structs and optimized mappings
 - **Batch Operations**: Batch minting and operations
 - **Event Optimization**: Minimal event emissions
 
-## 🌐 Network Support
+## Network Support
 
 - **Local Development**: Hardhat local network
 - **Testnets**: Sepolia, Goerli
 - **Mainnet**: Ethereum mainnet
 - **L2s**: Polygon, Arbitrum (configurable)
 
-## 📝 License
-
-MIT License - see LICENSE file for details.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests
-5. Submit a pull request
-
-## 📞 Support
-
-For questions or support, please contact the SpringTen team.
